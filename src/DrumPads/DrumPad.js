@@ -1,13 +1,11 @@
 
 export default function DrumPad(props){
-    function playAudio(){
-        document.getElementById(props.mappedKey).play()
-    }
+ 
        
     return(
         <button className="drum-pad" 
                 id={props.sample} 
-                onClick={playAudio}
+                onClick={()=>props.playAudio(props.mappedKey)}
                 >
             {props.mappedKey}
                 <audio src={props.sample} 

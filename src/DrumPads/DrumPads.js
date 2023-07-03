@@ -23,17 +23,32 @@ export default function DrumPads(props){
         {sample:drum9,key:"C"},
     ]
     function handleKeyDown(event){
-        document.getElementById(event.code[3]).play()
+        playAudio(event.code[3])
+        
     }      
+    function playAudio(id){
+        document.getElementById(id).play()
+        props.setPlaying(
+            sampleMap.filter(obj=>{
+                return obj.key===id
+            })[0]
+            .sample
+        )
+    }
    const drumPads = sampleMap.map((e,i)=>{
-        return (<DrumPad key={i} sample={e.sample} mappedKey={e.key}/>)
+        return (<DrumPad 
+            key={i} 
+            sample={e.sample} 
+            mappedKey={e.key}
+            playAudio={playAudio}
+            />)
     })
 
     return(
         <>
         <div onKeyDown={handleKeyDown}>
         {drumPads}
-        </div>qq
+        </div>
         </>
     )
 }

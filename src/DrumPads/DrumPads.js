@@ -23,8 +23,13 @@ export default function DrumPads(props){
         {sample:drum9,key:"C"},
     ]
     function handleKeyDown(event){
-        playAudio(event.code[3])
-        
+        const pressedKey = event.code[3]    
+        if(sampleMap.some(obj=>{
+            return obj.key === pressedKey
+        })){
+            playAudio(pressedKey)   
+        }
+                
     }      
     function playAudio(id){
         document.getElementById(id).play()

@@ -6,10 +6,12 @@ function App() {
   return (
     <div className="App">
       <div id="drum-machine">
+        <h1>DrumMachine...</h1>
         <div id="display">
-          <p>{playing}</p>
+          <p>{playing===""?"waiting for user input":playing}</p>
+          </div>
           <DrumPads setPlaying={setPlaying}/>
-        </div>
+        
 
       </div>
     </div>

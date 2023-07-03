@@ -1,10 +1,60 @@
+:root{
+--black-to-gray:linear-gradient(351deg, rgba(0,0,0,1) 0%, rgba(159,153,159,1) 100%);
+--red-to-gray:linear-gradient(351deg, rgba(189,4,4,1) 0%, rgba(228,185,201,1) 100%);  
+--green-to-light-green:linear-gradient(351deg, rgba(15,93,53,1) 0%, rgba(194,228,185,1) 100%);
+}
+body{
+  background-image: url("../src/images/bg.jpg");
+  background-position-x: center;
+}
+
 .drum-pad{
   display:inline-block;
-  background-color: green;
+  background: var(--black-to-gray);
   width:100px;
   height:100px;
   margin: 10px;
+  box-shadow: 5px 5px 10px black;
 }
+#drum-pad-container{
+  display:flex;
+  flex-wrap: wrap;
+  place-content: center;
+  width:400px;
+  margin: auto;
+}
+#display{
+  background:var(--green-to-light-green);
+  width: 80%;
+  height:50px;
+  margin:auto;
+  padding:5px;
+  box-shadow: 5px 5px 10px inset;
+  border: solid 5px rgb(58, 59, 59);
+}
+
 #display > p{
-  font-size:50px;
+  font-size:20px;
+  margin:3px;
+  font-family: 'Foldit', cursive;
+  mix-blend-mode: multiply;
+  word-break:break-all;
+  
+}
+#drum-machine{
+  width:min-content;
+  margin:auto;
+  margin-top:50px;
+  background-image: var(--red-to-gray),url(/src/images/texture.jpg);
+  background-blend-mode: darken;
+  padding:20px;
+  box-shadow: 20px 20px 50px;
+}
+
+#drum-machine > h1{
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 60px;
+  margin:0;
+  color: white;
+  opacity:0.6;
 }

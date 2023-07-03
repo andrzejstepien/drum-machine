@@ -51,7 +51,7 @@ export default function DrumPads(props){
 
     return(
         <>
-        <div onKeyDown={handleKeyDown}>
+        <div onKeyDown={handleKeyDown} id="drum-pad-container">
         {drumPads}
         </div>
         </>

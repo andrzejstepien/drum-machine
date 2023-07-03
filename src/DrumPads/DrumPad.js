@@ -11,7 +11,7 @@ export default function DrumPad(props){
                 >
             {props.mappedKey}
                 <audio src={props.sample} 
-                    class="clip" 
+                    className="clip" 
                     id={props.mappedKey}>            
                 </audio>
             </button>
